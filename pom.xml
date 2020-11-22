@@ -10,7 +10,7 @@
     </parent>
     <groupId>dev.mouhieddine</groupId>
     <artifactId>spring-pet-clinic</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>spring-pet-clinic</name>
     <description>Spring Pet Clinic Framework</description>
     <modules>
@@ -38,6 +38,6 @@
         </plugins>
     </build>
     <scm> <developerConnection>scm:git:https://github.com/BIRSAx2/spring-pet-clinic.git</developerConnection>
-      <tag>spring-pet-clinic-0.0.2</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
