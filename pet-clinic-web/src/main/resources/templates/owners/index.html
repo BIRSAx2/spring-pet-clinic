@@ -8,6 +8,23 @@
     <title>List of Owners</title>
 </head>
 <body>
+<!--/ *@thymeleafVar id="owner" type="dev.mouhieddine.springpetclinic.model.Owner" /-->
 <h1 th:text="'List of Owners'">Index</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="owner : ${owners}">
+        <td th:text="${owner?.firstName}"></td>
+        <td th:text="${owner?.firstName}"></td>
+        <td th:text="${owner?.lastName}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
