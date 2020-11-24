@@ -7,19 +7,19 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractMapService<T,ID> implements CrudService<T,ID>{
-    protected Map<ID,T> map = new HashMap<>();
+public abstract class AbstractMapService<T, ID> {
+    protected Map<ID, T> map = new HashMap<>();
 
     public T findById(ID id) {
         return map.get(id);
     }
 
-    public T save(ID id,T object) {
-        return map.put(id,object);
+    public T save(ID id, T object) {
+        return map.put(id, object);
     }
 
     public void delete(T object) {
-        map.entrySet().removeIf(entry ->entry.getValue().equals(object));
+        map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
     public void deleteById(ID id) {
