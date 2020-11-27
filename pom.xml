@@ -44,14 +44,6 @@
                     <target>14</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <scm> <developerConnection>scm:git:https://github.com/BIRSAx2/spring-pet-clinic.git</developerConnection>
