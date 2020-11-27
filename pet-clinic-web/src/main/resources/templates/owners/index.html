@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,13 +9,13 @@
 </head>
 <body>
 <!--/ *@thymeleafVar id="owner" type="dev.mouhieddine.springpetclinic.model.Owner" /-->
-<h1 th:text="'List of Owners'">Index</h1>
-<table>
+<h2>Owners</h2>
+<table class="table table-striped">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 200px;">Firstname</th>
+        <th style="width: 120px">Lastname</th>
     </tr>
     </thead>
     <tbody>
