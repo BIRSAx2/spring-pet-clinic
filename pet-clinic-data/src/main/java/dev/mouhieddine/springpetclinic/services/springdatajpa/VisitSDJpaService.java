@@ -13,7 +13,7 @@ import java.util.Set;
  **/
 public class VisitSDJpaService implements VisitService {
 
-  VisitRepository visitRepository;
+  private final VisitRepository visitRepository;
 
   public VisitSDJpaService(VisitRepository visitRepository) {
     this.visitRepository = visitRepository;
