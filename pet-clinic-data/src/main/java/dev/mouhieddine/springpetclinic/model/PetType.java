@@ -1,13 +1,21 @@
 package dev.mouhieddine.springpetclinic.model;
 
-public class PetType extends BaseEntity{
-    private String name;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-    public String getName() {
-        return name;
-    }
+@Entity
+@Table(name = "types")
+public class PetType extends BaseEntity {
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  @Column(name = "name")
+  private String name;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }
