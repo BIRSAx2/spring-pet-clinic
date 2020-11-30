@@ -3,6 +3,8 @@ package dev.mouhieddine.springpetclinic.services.springdatajpa;
 import dev.mouhieddine.springpetclinic.model.Specialty;
 import dev.mouhieddine.springpetclinic.repositories.SpecialtyRepository;
 import dev.mouhieddine.springpetclinic.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +13,9 @@ import java.util.Set;
  * @author : Mouhieddine.dev
  * @created : 11/30/2020, Monday
  **/
+
+@Service
+@Profile("springdatajpa")
 public class SpecialtySDJpaService implements SpecialtyService {
   private final SpecialtyRepository specialtyRepository;
 

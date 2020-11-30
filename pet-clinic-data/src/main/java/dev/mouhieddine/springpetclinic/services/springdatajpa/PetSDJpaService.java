@@ -3,6 +3,8 @@ package dev.mouhieddine.springpetclinic.services.springdatajpa;
 import dev.mouhieddine.springpetclinic.model.Pet;
 import dev.mouhieddine.springpetclinic.repositories.PetRepository;
 import dev.mouhieddine.springpetclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +13,8 @@ import java.util.Set;
  * @author : Mouhieddine.dev
  * @created : 11/30/2020, Monday
  **/
+@Service
+@Profile("springdatajpa")
 public class PetSDJpaService implements PetService {
   private final PetRepository petRepository;
 

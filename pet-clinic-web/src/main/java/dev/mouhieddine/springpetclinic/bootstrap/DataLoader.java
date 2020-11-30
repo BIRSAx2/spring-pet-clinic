@@ -1,10 +1,7 @@
 package dev.mouhieddine.springpetclinic.bootstrap;
 
 import dev.mouhieddine.springpetclinic.model.*;
-import dev.mouhieddine.springpetclinic.services.OwnerService;
-import dev.mouhieddine.springpetclinic.services.PetTypeService;
-import dev.mouhieddine.springpetclinic.services.SpecialtyService;
-import dev.mouhieddine.springpetclinic.services.VetService;
+import dev.mouhieddine.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +14,15 @@ public class DataLoader implements CommandLineRunner {
   private final VetService vetService;
   private final PetTypeService petTypeService;
   private final SpecialtyService specialtyService;
+  private final VisitService visitService;
 
 
-  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialtyService = specialtyService;
+    this.visitService = visitService;
   }
 
   @Override
