@@ -3,6 +3,7 @@ package dev.mouhieddine.springpetclinic.services.springdatajpa;
 import dev.mouhieddine.springpetclinic.model.Owner;
 import dev.mouhieddine.springpetclinic.repositories.OwnerRepository;
 import dev.mouhieddine.springpetclinic.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Set;
  * @created : 11/30/2020, Monday
  **/
 @Service
+@Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 
   private final OwnerRepository ownerRepository;
