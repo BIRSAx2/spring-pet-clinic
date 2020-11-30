@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "specialties")
-public class Speciality extends BaseEntity implements Serializable {
+public class Specialty extends BaseEntity implements Serializable {
   
   @Column(name = "description")
   private String description;
