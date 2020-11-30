@@ -14,7 +14,7 @@ import java.util.Set;
  * @created : 11/30/2020, Monday
  **/
 @Service
-@Profile("springdatajpa")
+@Profile("spring-data-jpa")
 public class PetTypeSDJpaService implements PetTypeService {
   private final PetTypeRepository petTypeRepository;
 

@@ -15,21 +15,22 @@ public class DataLoader implements CommandLineRunner {
   private final PetTypeService petTypeService;
   private final SpecialtyService specialtyService;
   private final VisitService visitService;
+  private final PetService petService;
 
-
-  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
+  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, PetService petService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialtyService = specialtyService;
     this.visitService = visitService;
+    this.petService = petService;
   }
 
   @Override
   public void run(String... args) throws Exception {
 
     int count = petTypeService.findAll().size();
-    if(count==0) loadData();
+    if (count == 0) loadData();
 
   }
 
@@ -99,13 +100,33 @@ public class DataLoader implements CommandLineRunner {
     pet1.setBirthDate(LocalDate.now());
     pet1.setName("Tom");
     pet1.setOwner(owner1);
+    petService.save(pet1);
     owner1.getPets().add(pet1);
+
 
     Pet pet2 = new Pet();
     pet2.setPetType(dog);
     pet2.setBirthDate(LocalDate.now());
     pet2.setName("Spike");
     pet2.setOwner(owner2);
+    petService.save(pet2);
     owner2.getPets().add(pet2);
+
+    System.out.println("Loading visits...");
+    Visit visit1 = new Visit();
+    visit1.setDate(LocalDate.now());
+    visit1.setDescription("Tom Visit n. 1");
+    visit1.setPet(pet1);
+//    pet1.getVisits().add(visit1);
+    visitService.save(visit1);
+
+    Visit visit2 = new Visit();
+    visit2.setDate(LocalDate.now());
+    visit2.setDescription("Spike Visit n. 1");
+    visit2.setPet(pet2);
+//    pet1.getVisits().add(visit1);
+    visitService.save(visit2);
+
+
   }
 }
