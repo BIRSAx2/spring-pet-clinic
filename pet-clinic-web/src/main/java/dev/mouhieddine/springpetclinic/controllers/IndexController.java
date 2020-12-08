@@ -13,7 +13,7 @@ public class IndexController {
     }
 
     @RequestMapping("/oups")
-    public String oupsHandler(Model model){
+    public String oupsHandler(){
     return "not-implemented";
     }
 }
