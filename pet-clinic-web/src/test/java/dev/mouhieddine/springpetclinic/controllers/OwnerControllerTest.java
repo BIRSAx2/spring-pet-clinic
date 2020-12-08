@@ -49,24 +49,12 @@ class OwnerControllerTest {
 
   @Test
   void listOwners() throws Exception {
-    String[] viewUrls = {"/owners", "/owners/", "/owners.html", "/owners.html/"};
-    Arrays.stream(viewUrls).forEach(viewName -> {
-      try {
-        listOwnersBy(viewName);
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    });
-  }
-
-  void listOwnersBy(String viewName) throws Exception {
     when(ownerService.findAll()).thenReturn(owners);
 
-    mockMvc.perform(get(viewName))
+    mockMvc.perform(get("/owners"))
             .andExpect(status().isOk())
             .andExpect(view().name("owners/index"))
             .andExpect(model().attribute("owners", hasSize(2)));
-    //"owners/index"
   }
 
   @Test
