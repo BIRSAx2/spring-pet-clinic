@@ -13,8 +13,8 @@
 
     <packaging>pom</packaging>
 
-    <name>sfg-pet-clinic</name>
-    <description>SFG Pet Clinic Project</description>
+    <name>spring-pet-clinic</name>
+    <description>Spring Pet Clinic Project</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
