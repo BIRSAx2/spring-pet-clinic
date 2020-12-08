@@ -25,8 +25,7 @@ import static org.mockito.Mockito.*;
  * @since : 12/8/2020, Tuesday
  **/
 
-@ExtendWith(MockitoExtension.class)
-        // sets up a junit 5 for Mockito
+@ExtendWith(MockitoExtension.class) // sets up a junit 5 for Mockito
 class OwnerSDJpaServiceTest {
   final String LAST_NAME = "Sabir";
   final Long OWNER_ID = 1L;
