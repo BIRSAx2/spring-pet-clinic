@@ -31,7 +31,7 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
   @Override
   public Vet save(Vet object) {
     if (object == null) return null;
-
+    if(object.getSpecialties() == null) throw new RuntimeException("Vet object must have at least one specialty");
     if (object.getSpecialties().size() > 0) {
       object.getSpecialties().forEach(specialty -> {
         if (specialty.getId() == null)
