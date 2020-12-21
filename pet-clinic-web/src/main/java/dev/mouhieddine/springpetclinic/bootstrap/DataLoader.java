@@ -2,11 +2,13 @@ package dev.mouhieddine.springpetclinic.bootstrap;
 
 import dev.mouhieddine.springpetclinic.model.*;
 import dev.mouhieddine.springpetclinic.services.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Slf4j
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -35,7 +37,7 @@ public class DataLoader implements CommandLineRunner {
   }
 
   private void loadData() {
-    System.out.println("Loading Pet Types...");
+    log.info("Loading Pet Types...");
 
     PetType cat = new PetType();
     cat.setName("Cat");
@@ -45,7 +47,7 @@ public class DataLoader implements CommandLineRunner {
     dog.setName("Dog");
     PetType savedDogPetType = petTypeService.save(dog);
 
-    System.out.println("Loading specialties...");
+    log.info("Loading specialties...");
 
     Specialty radiology = new Specialty();
     radiology.setDescription("Radiology");
@@ -60,7 +62,7 @@ public class DataLoader implements CommandLineRunner {
     dentistry.setDescription("Dentistry");
     Specialty savedDentistry = specialtyService.save(dentistry);
 
-    System.out.println("Loading owners...");
+    log.info("Loading owners...");
 
     Owner owner1 = new Owner();
     owner1.setFirstName("Mouhieddine");
@@ -80,7 +82,7 @@ public class DataLoader implements CommandLineRunner {
 
     ownerService.save(owner2);
 
-    System.out.println("Loading vets...");
+    log.info("Loading vets...");
 
     Vet vet1 = new Vet();
     vet1.setFirstName("Brad");
@@ -94,7 +96,7 @@ public class DataLoader implements CommandLineRunner {
     vet2.getSpecialties().add(savedRadiology);
     vetService.save(vet2);
 
-    System.out.println("Loading pets...");
+    log.info("Loading pets...");
     Pet pet1 = new Pet();
     pet1.setPetType(cat);
     pet1.setBirthDate(LocalDate.now());
@@ -112,7 +114,7 @@ public class DataLoader implements CommandLineRunner {
     petService.save(pet2);
     owner2.getPets().add(pet2);
 
-    System.out.println("Loading visits...");
+    log.info("Loading visits...");
     Visit visit1 = new Visit();
     visit1.setDate(LocalDate.now());
     visit1.setDescription("Tom Visit n. 1");
