@@ -23,4 +23,7 @@ public class BaseEntity implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY) // IDENTITY->AUTO INCREMENT in MySQL
   private Long id;
 
+  public boolean isNew() {
+    return id == null;
+  }
 }
