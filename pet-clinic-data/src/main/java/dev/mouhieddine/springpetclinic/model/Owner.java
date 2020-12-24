@@ -41,6 +41,7 @@ public class Owner extends Person {
   }
 
   public void addPet(Pet pet) {
+    pet.setOwner(this);
     pets.add(pet);
   }
 
